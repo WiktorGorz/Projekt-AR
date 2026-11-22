@@ -49,4 +49,15 @@ gg_miss_fct(dane,fct=Road_Surface_Conditions)
 ```{r}
 gg_miss_fct(dane,fct=Road_Type)
 ```
+```{r}
+gg_miss_span(dane,
+             Number_of_Vehicles,
+             span_every = 1,
+             facet = Weather_Conditions)
+```
+## 2.1 Sprawdzić braki danych
+
+## 2.2 Spójność danych 
+
+-W danych numerycznych czy nie ma brudnych danych (liczba ofiar np. liczba na minusie itd.)
 
