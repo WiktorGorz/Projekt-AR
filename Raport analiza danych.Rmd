@@ -1,0 +1,14 @@
+---
+title: "Raport z analizy danych dotyczących wypadków samochodowych"
+author: "Wiktor Górzkowski, Roch Szuksztul"
+date: "2026-11-22"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+# wczytywanie danych
+dane <- read.csv("accident_data.csv")
+```
+
