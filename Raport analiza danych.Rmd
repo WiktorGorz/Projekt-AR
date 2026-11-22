@@ -8,7 +8,45 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
+library(naniar)
 # wczytywanie danych
 dane <- read.csv("accident_data.csv")
+```
+
+# 1.Wprowadzenie
+# 2.Opis danych
+# 3.Porządkowanie i czyszczenie danych
+Liczba braków danych to `r n_miss(dane)`, co stanowi `r pct_miss(dane)`% wszystkich danych.
+
+```{r}
+dane[] <- lapply(dane, function(x) ifelse(trimws(x) == "", NA, x))
+```
+
+
+```{r}
+mcar_test(dane)
+```
+
+```{r}
+vis_miss(dane, warn_large_data = FALSE)
+```
+
+```{r}
+gg_miss_var(dane)
+```
+```{r}
+gg_miss_upset(dane)
+```
+
+```{r}
+gg_miss_fct(dane,fct=Weather_Conditions)
+```
+
+```{r}
+gg_miss_fct(dane,fct=Road_Surface_Conditions)
+```
+
+```{r}
+gg_miss_fct(dane,fct=Road_Type)
 ```
 
